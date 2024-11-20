@@ -45,10 +45,10 @@ services:
 envVarGroups:
   - name: spree-settings
     envVars:
-      - key: SECRET_KEY_BASE # for production installs comment out this lines
-        generateValue: true # for production installs comment out this lines
-      #- key: RAILS_MASTER_KEY # for production installs uncomment this line
-      #  sync: false # for production installs uncomment this line
+      # - key: SECRET_KEY_BASE # for production installs comment out this lines
+        # generateValue: true # for production installs comment out this lines
+      - key: RAILS_MASTER_KEY # for production installs uncomment this line
+       sync: false # for production installs uncomment this line
       - key: ADMIN_EMAIL
         value: 'spree@example.com'
       - key: ADMIN_PASSWORD
