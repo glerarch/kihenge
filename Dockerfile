@@ -13,8 +13,16 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 sqlite3 libvips && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get install --no-install-recommends -y curl libjemalloc2 libvips && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives 
+
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+    tzdata \
+    graphviz \
+    libpq-dev \
+    postgresql-client \
+    nodejs
 
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
@@ -57,5 +65,5 @@ USER 1000:1000
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start the server by default, this can be overwritten at runtime
-EXPOSE 3000
-CMD ["./bin/rails", "server", "-b", "0.0.0.0"]
+EXPOSE 3002
+CMD ["./bin/rails", "server", "-b", "0.0.0.0", "-p", "3002"]
