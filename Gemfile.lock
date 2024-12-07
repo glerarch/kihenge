@@ -583,6 +583,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails
   sassc!
+  sassc-rails
   selenium-webdriver
   solid_cache
   solid_queue (>= 0.3.2)
