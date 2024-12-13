@@ -13,8 +13,16 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 sqlite3 libvips && \
+    apt-get install --no-install-recommends -y curl libjemalloc2 libvips && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+    tzdata \
+    graphviz \
+    libpq-dev \
+    postgresql-client \
+    nodejs
 
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
