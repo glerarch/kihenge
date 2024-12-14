@@ -77,7 +77,6 @@ gem "solid_cache"
 # Spree gems
 gem "spree"
 gem "spree_emails"
-gem "spree_sample"
 gem "spree_backend"
 gem "spree_frontend"
 gem "spree_auth_devise"
