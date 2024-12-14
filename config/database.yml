@@ -85,6 +85,3 @@ production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
   database: <%= ENV['POSTGRES_DB'] %>
-  database: kihenge_production
-  username: kihenge
-  password: <%= ENV["KIHENGE_DATABASE_PASSWORD"] %>

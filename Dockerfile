@@ -20,7 +20,6 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y \
     tzdata \
     graphviz \
-    libpq-dev \
     postgresql-client \
     nodejs
 
